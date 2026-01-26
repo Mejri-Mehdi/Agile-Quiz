@@ -266,6 +266,8 @@ function listenToLobby() {
         if (sortedPlayers.length > 0 && sortedPlayers[0].name === currentPlayerName) {
             isHost = true;
             hostStartBtn.classList.remove('hidden');
+                        // ADD THIS LINE to add space above the button
+            hostStartBtn.style.marginTop = '30px'; // Adjust the value as needed
         } else {
             isHost = false;
             hostStartBtn.classList.add('hidden');
