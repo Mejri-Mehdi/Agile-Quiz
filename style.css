@@ -182,7 +182,10 @@ body {
     margin-top: 0.25rem;
 }
 
-/* Buttons */
+#host-start-btn {
+    margin-top: 2rem;
+}
+
 .btn {
     padding: 1rem 2.5rem;
     font-size: 1.125rem;
