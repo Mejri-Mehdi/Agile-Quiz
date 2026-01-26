@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Agile & Scrum 🚀</title>
+    <meta name="description" content="Testez vos connaissances sur les méthodes agiles et le framework Scrum">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Firebase SDKs (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <div class="welcome-card glass-card">
+                <div class="logo">
+                    <img src="logo.png" alt="AIVA Logo" id="app-logo">
+                </div>
+                <h1 class="title">Quiz Agile & Scrum</h1>
+                <p class="subtitle">Rejoignez la session multijoueur</p>
+
+                <div class="input-group">
+                    <input type="text" id="username-input" placeholder="Votre nom" maxlength="15">
+                </div>
+
+                <button id="join-btn" class="btn btn-primary">
+                    Rejoindre
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Lobby Screen -->
+        <div id="lobby-screen" class="screen">
+            <div class="welcome-card glass-card">
+                <h2 class="title" style="font-size: 1.8rem;">Salle d'attente</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span id="player-count" class="stat-number">0</span>
+                        <span class="stat-label">Joueurs</span>
+                    </div>
+                </div>
+
+                <div class="players-list-container">
+                    <h3>Joueurs connectés :</h3>
+                    <div id="players-list" class="players-list">
+                        <!-- Players will be injected here -->
+                    </div>
+                </div>
+
+                <div class="lobby-message">
+                    En attente de l'hôte pour commencer...
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="qr-section">
+                    <p class="qr-text">Invitez vos amis !</p>
+                    <div id="qr-code" class="qr-code-container"></div>
+                    <p class="qr-url" id="current-url"></p>
+                </div>
+
+                <button id="host-start-btn" class="btn btn-primary hidden">
+                    Lancer la partie
+                    <span class="btn-icon">🚀</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="timer-container">
+                    <div id="timer-bar" class="timer-bar"></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="current-question">1</span> / <span id="total-questions">11</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <div id="question-card" class="question-card glass-card">
+                    <div class="question-number">Question <span id="q-number">1</span></div>
+                    <h2 id="question-text" class="question-text"></h2>
+                    <div id="answers-container" class="answers-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-card glass-card">
+                <div id="results-emoji" class="results-emoji">🎉</div>
+                <h2 class="results-title">Terminé!</h2>
+
+                <div class="score-display">
+                    <div class="score-circle">
+                        <svg width="220" height="220" viewBox="0 0 220 220" class="score-ring">
+                            <circle cx="110" cy="110" r="90" class="score-ring-bg"></circle>
+                            <circle cx="110" cy="110" r="90" class="score-ring-fill" id="score-ring-fill"></circle>
+                        </svg>
+                        <div class="score-text">
+                            <span id="score-number" class="score-number">0</span>
+                            <span class="score-total">/11</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="leaderboard-container">
+                    <h3>Classement Final</h3>
+
+                    <div id="podium-container" class="podium-container">
+                        <!-- Top 3 will be injected here -->
+                    </div>
+
+                    <div id="leaderboard-list" class="leaderboard-list">
+                        <div class="loading-spinner">Chargement des résultats...</div>
+                    </div>
+                </div>
+
+                <div class="results-actions">
+                    <button id="share-btn" class="btn btn-secondary">
+                        Partager
+                        <span class="btn-icon"></span>
+                    </button>
+                    <button id="reset-btn" class="btn btn-primary hidden">
+                        Rejouer
+                        <span class="btn-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
