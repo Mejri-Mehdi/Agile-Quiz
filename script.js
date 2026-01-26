@@ -237,6 +237,8 @@ function generateQRCode() {
 
     qrCodeContainer.innerHTML = '';
     qrCodeContainer.appendChild(img);
+    
+    currentUrlEl.style.marginBottom = '30px'; // Adjust the value as needed
 }
 
 function listenToLobby() {
