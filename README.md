@@ -26,7 +26,12 @@ A real-time multiplayer quiz game designed to test and improve knowledge of Agil
 
 ## 📸 Screenshots
 
-*(Add screenshots of the lobby, quiz, and results screen here)*
+<img width="1658" height="919" alt="gfgfg" src="https://github.com/user-attachments/assets/b933dfb1-50b7-4d91-805e-33e2d0c891a6" />
+<img width="1772" height="930" alt="gh" src="https://github.com/user-attachments/assets/1169db1e-571e-45f5-8eed-55c8a8646def" />
+<img width="1195" height="785" alt="cwxc" src="https://github.com/user-attachments/assets/0f5894bd-6f62-43ca-a6c1-90d1add51d8f" />
+<img width="1077" height="923" alt="ze" src="https://github.com/user-attachments/assets/70d2c938-ceb5-418a-840c-ddae8baac91b" />
+<img width="1094" height="939" alt="az" src="https://github.com/user-attachments/assets/7c612549-fa52-440d-9145-2bcafc3fc436" />
+
 
 ## 📝 License
 
