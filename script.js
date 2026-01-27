@@ -24,6 +24,7 @@ try {
 let currentPlayerId = null;
 let currentPlayerName = "";
 let isHost = false;
+let serverTimeOffset = 0; // Difference between server time and local time
 
 // Quiz Data
 const quizData = [
@@ -143,6 +144,7 @@ const quizData = [
 let localCurrentQuestionIndex = -1;
 let score = 0;
 let userAnswers = [];
+let timerAnimationFrame; // For requestAnimationFrame
 
 // DOM Elements
 const loginScreen = document.getElementById('login-screen');
@@ -176,6 +178,12 @@ const currentUrlEl = document.getElementById('current-url');
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     totalQuestionsEl.textContent = quizData.length;
+
+    // Listen for server time offset
+    const offsetRef = firebase.database().ref(".info/serverTimeOffset");
+    offsetRef.on("value", (snap) => {
+        serverTimeOffset = snap.val();
+    });
 });
 
 // Event Listeners
@@ -380,6 +388,7 @@ function resetLocalState() {
     quizScreen.classList.remove('active');
     resultsScreen.classList.remove('active');
     lobbyScreen.classList.add('active'); // Go back to lobby
+    if (timerAnimationFrame) cancelAnimationFrame(timerAnimationFrame);
 }
 
 function startLocalQuestion(index, startTime) {
@@ -409,19 +418,29 @@ function startLocalQuestion(index, startTime) {
     });
 
     // Restart Timer Animation with Sync
-    const now = Date.now();
-    const elapsed = startTime ? (now - startTime) : 0;
-    const remaining = Math.max(0, QUESTION_DURATION - elapsed);
-    const percentageRemaining = (remaining / QUESTION_DURATION) * 100;
+    // Calculate estimated server time when this question started
+    // We rely on the server timestamp `startTime` which is absolute server time.
+    // To compare with local time, we need: localTime + serverTimeOffset = estimatedServerTime
+    
+    if (timerAnimationFrame) cancelAnimationFrame(timerAnimationFrame);
 
-    timerBar.style.transition = 'none';
-    timerBar.style.width = percentageRemaining + '%';
+    function updateTimer() {
+        const estimatedServerNow = Date.now() + serverTimeOffset;
+        const elapsed = estimatedServerNow - startTime;
+        const remaining = Math.max(0, QUESTION_DURATION - elapsed);
+        const percentageRemaining = (remaining / QUESTION_DURATION) * 100;
 
-    // Force reflow
-    void timerBar.offsetWidth;
+        timerBar.style.width = percentageRemaining + '%';
 
-    timerBar.style.transition = `width ${remaining}ms linear`;
-    timerBar.style.width = '0%';
+        if (remaining > 0) {
+            timerAnimationFrame = requestAnimationFrame(updateTimer);
+        } else {
+             timerBar.style.width = '0%';
+        }
+    }
+
+    // Start the loop
+    updateTimer();
 }
 
 function selectAnswer(selectedIndex) {
@@ -457,6 +476,8 @@ function finishGame() {
 
     quizScreen.classList.remove('active');
     resultsScreen.classList.add('active');
+
+    if (timerAnimationFrame) cancelAnimationFrame(timerAnimationFrame);
 
     progressFill.style.width = '100%';
     animateScore();
