@@ -30,7 +30,6 @@ A real-time multiplayer quiz game designed to test and improve knowledge of Agil
 <img width="1772" height="923" alt="gh" src="https://github.com/user-attachments/assets/f8e288d7-c363-466d-986b-12540dbdee88" />
 <img width="1195" height="785" alt="cwxc" src="https://github.com/user-attachments/assets/0f5894bd-6f62-43ca-a6c1-90d1add51d8f" />
 <img width="1077" height="923" alt="ze" src="https://github.com/user-attachments/assets/70d2c938-ceb5-418a-840c-ddae8baac91b" />
-<img width="1094" height="939" alt="az" src="https://github.com/user-attachments/assets/7c612549-fa52-440d-9145-2bcafc3fc436" />
 
 
 ## 📝 License
