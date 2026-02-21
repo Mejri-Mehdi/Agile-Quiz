@@ -24,6 +24,10 @@ A real-time multiplayer quiz game designed to test and improve knowledge of Agil
 4. Share the URL or QR code with friends to let them join.
 5. The host (first player) clicks "Lancer la partie" to start!
 
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
 ## 📸 Screenshots
 
 <img width="1658" height="919" alt="gfgfg" src="https://github.com/user-attachments/assets/b933dfb1-50b7-4d91-805e-33e2d0c891a6" />
@@ -32,6 +36,3 @@ A real-time multiplayer quiz game designed to test and improve knowledge of Agil
 <img width="1077" height="923" alt="ze" src="https://github.com/user-attachments/assets/70d2c938-ceb5-418a-840c-ddae8baac91b" />
 
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
