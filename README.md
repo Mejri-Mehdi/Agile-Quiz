@@ -30,9 +30,11 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📸 Screenshots
 
-<img width="1658" height="919" alt="gfgfg" src="https://github.com/user-attachments/assets/b933dfb1-50b7-4d91-805e-33e2d0c891a6" />
-<img width="1772" height="923" alt="gh" src="https://github.com/user-attachments/assets/f8e288d7-c363-466d-986b-12540dbdee88" />
-<img width="1195" height="785" alt="cwxc" src="https://github.com/user-attachments/assets/0f5894bd-6f62-43ca-a6c1-90d1add51d8f" />
-<img width="1077" height="923" alt="ze" src="https://github.com/user-attachments/assets/70d2c938-ceb5-418a-840c-ddae8baac91b" />
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 1000px; margin: auto;">
+  <img src="https://github.com/user-attachments/assets/b933dfb1-50b7-4d91-805e-33e2d0c891a6" style="width: 100%; height: auto; border-radius: 10px;" />
+  <img src="https://github.com/user-attachments/assets/f8e288d7-c363-466d-986b-12540dbdee88" style="width: 100%; height: auto; border-radius: 10px;" />
+  <img src="https://github.com/user-attachments/assets/0f5894bd-6f62-43ca-a6c1-90d1add51d8f" style="width: 100%; height: auto; border-radius: 10px;" />
+  <img src="https://github.com/user-attachments/assets/70d2c938-ceb5-418a-840c-ddae8baac91b" style="width: 100%; height: auto; border-radius: 10px;" />
+</div>
 
 
