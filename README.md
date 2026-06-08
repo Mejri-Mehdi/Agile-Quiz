@@ -53,10 +53,14 @@ No complex frameworks or build tools – just pure, fast, and elegant code.
 🔧 **Firebase configuration** – the project already includes the required Firebase config.
 If you want to use your own Firebase project, replace the credentials in the JavaScript file.
 
+⚡ Or skip the setup and play instantly:
+🔗 https://mejri-mehdi.github.io/Agile-Quiz/
+
 📸 Screenshots
 <p align="center"> <strong>Click to expand – the game looks even better in motion!</strong> </p><table> <tr> <td><img src="https://github.com/user-attachments/assets/b933dfb1-50b7-4d91-805e-33e2d0c891a6" alt="Lobby screen" width="100%"/></td> <td><img src="https://github.com/user-attachments/assets/f8e288d7-c363-466d-986b-12540dbdee88" alt="Question screen" width="100%"/></td> </tr> <tr> <td><img src="https://github.com/user-attachments/assets/0f5894bd-6f62-43ca-a6c1-90d1add51d8f" alt="Leaderboard" width="100%"/></td> <td><img src="https://github.com/user-attachments/assets/70d2c938-ceb5-418a-840c-ddae8baac91b" alt="Result screen" width="100%"/></td> </tr> </table>
+
 📄 License
 This project is open source and freely available under the MIT License.
 See the LICENSE file for full details.
 
-<p align="center"> <sub>Built with ❤️ by <a href="https://github.com/Mejri-Mehdi">Mejri Mehdi</a></sub> </p> ```
+<p align="center"> <sub>Built with ❤️ by <a href="https://github.com/Mejri-Mehdi">Mejri Mehdi</a></sub> </p>
