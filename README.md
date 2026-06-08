@@ -55,7 +55,7 @@ If you want to use your own Firebase project, replace the credentials in the Jav
 
 ---
 
-##⚡ Or skip the setup and play instantly:
+## ⚡ Or skip the setup and play instantly:
 🔗 https://mejri-mehdi.github.io/Agile-Quiz/
 
 ---
