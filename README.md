@@ -53,7 +53,9 @@ No complex frameworks or build tools – just pure, fast, and elegant code.
 🔧 **Firebase configuration** – the project already includes the required Firebase config.
 If you want to use your own Firebase project, replace the credentials in the JavaScript file.
 
-⚡ Or skip the setup and play instantly:
+---
+
+##⚡ Or skip the setup and play instantly:
 🔗 https://mejri-mehdi.github.io/Agile-Quiz/
 
 ---
